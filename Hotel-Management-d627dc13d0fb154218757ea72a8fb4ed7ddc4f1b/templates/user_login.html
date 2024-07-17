@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Login!</title>
+  </head>
+  <body style="background-color: #379683;">
+      {% if name %}
+
+      <div class="alert alert-warning" role="alert">
+        Your user id or passoword are nopt match or first sign up!
+      </div>
+
+      {%endif%}
+    <div class="container" style="margin-top: 150px;background-color: #CAFAFE; width: 600px;">
+        <h1 style="text-align: center;">User Pannel</h1>
+     <form action="/userlogin" method="POST">
+        <div class="form-group">
+            {% csrf_token %}
+          <label for="user_id">Enter Email Id</label>
+          <input type="email" class="form-control" id="user_id" name="user_id" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="user_password">Password</label>
+          <input type="password" class="form-control" id="user_password" name="user_password">
+        </div>
+        <p><button type="submit" class="btn btn-primary" id='submit_button' name='submit_button' value="submit_button" style="margin-left: 150px;margin-bottom: 5px;">Submit</button><button type="submit" class="btn btn-primary" id='singup_button' name='singup_button' value="singup_button" style="margin-left: 150px;margin-bottom: 5px;">Signup</button></p>
+      </form>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
